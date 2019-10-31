@@ -1,0 +1,73 @@
+﻿@model IList<Recipe>
+@{
+    ViewData["Title"] = "Table";
+}
+
+<h2>All Recipes</h2>
+<table>
+    <tr>
+        <th></th>
+        @{
+            foreach (Recipe recipe in Model)
+            {
+                <th><a asp-controller="Recipes" asp-action="Detail" asp-route-name="@recipe.Id"><img src="~/images/@recipe.ImageName" alt="@recipe.ImageName" /></a></th>
+            }
+        }
+    </tr>
+    <tr>
+        <td>Name</td>
+        @{
+            foreach (Recipe recipe in Model)
+            {
+                <td><p>@recipe.Name</p></td>
+            }
+        }
+    </tr>
+    <tr>
+        <td>Type</td>
+        @{
+            foreach (Recipe recipe in Model)
+            {
+                <td><p>@recipe.RecipeType</p></td>
+            }
+        }
+    </tr>
+    <tr>
+        <td>Cook Time</td>
+        @{
+            foreach (Recipe recipe in Model)
+            {
+                <td><p>@recipe.CookTimeInMinutes.ToString() min</p></td>
+            }
+        }
+    </tr>
+    <tr>
+        <td>Ingredients</td>
+        @{
+            foreach (Recipe recipe in Model)
+            {
+                <td><p>@recipe.Ingredients.Count.ToString() ingredients</p></td>
+            }
+        }
+    </tr>
+    <tr>
+        <td>Rating</td>
+        @{
+            foreach (Recipe recipe in Model)
+            {
+                int stars = (int)recipe.AverageRating;
+                if (stars < 1)
+                {
+                    stars = 1;
+                }
+                if (stars > 5)
+                {
+                    stars = 5;
+                }
+                string starImage = stars.ToString() + "-star.png";
+
+                <td><img src="~/images/@starImage" alt="@starImage" /></td>
+            }
+        }
+    </tr>
+</table>

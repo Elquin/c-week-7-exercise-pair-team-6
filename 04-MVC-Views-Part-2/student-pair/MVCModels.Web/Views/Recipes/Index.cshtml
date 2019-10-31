@@ -1,0 +1,37 @@
+﻿@model IList<Recipe>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>All Recipes</h2>
+
+<div class="Main_Flex">
+    @{ 
+        foreach(Recipe recipe in Model)
+        {
+            int stars = (int)recipe.AverageRating;
+            if(stars < 1)
+            {
+                stars = 1;
+            }
+            if(stars > 5)
+            {
+                stars = 5;
+            }
+            string starImage = stars.ToString() + "-star.png";
+            string ingredientCount = recipe.Ingredients.Count.ToString() + " ingredients";
+
+            <div >
+                <img class="Food_Image" src="~/images/@recipe.ImageName" alt="@recipe.Name" />
+                
+                <div class="Green_Div">
+                    <h3 class="Item_Name"><a asp-controller="Recipes" asp-action="Detail" asp-route-name="@recipe.Id">@recipe.Name</a></h3>
+                    <div class="Green_Box">
+                    <img class="Rating_Star" src="~/images/@starImage" alt="@starImage" />
+                    <p>@ingredientCount</p>
+                    </div>
+                </div>
+            </div>
+        }
+    }
+</div>

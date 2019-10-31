@@ -1,4 +1,5 @@
-﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification\ 
+﻿/*#region default formatting*/
+/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification\ 
 for details on configuring this project to bundle and minify static web assets. */
 body {
     padding-top: 50px;
@@ -35,4 +36,116 @@ body {
         display: none;
     }
 }
+/*#endregion*/
 
+/*#region Recipes Main*/
+.Food_Image {
+    height: 200px;
+}
+
+.Rating_Star {
+    height: 15px;
+    width: 80px;
+}
+
+.Item_Name{
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.Green_Div {
+    display: flex;
+    flex-direction: column;
+    background-color: #eff7e0;
+    max-width: 281px;
+    padding: 0px 10px 0px 10px;
+    min-height: 100px;
+}
+
+.Green_Box {
+    display: flex;
+    width: 281px;
+}
+
+.Green_Box p {
+    text-align: right;
+}
+
+.Main_Flex{
+    display: flex;
+    align-items: stretch;
+}
+.Main_Flex > div {
+    padding-right: 15px;
+}
+/*#endregion*/
+
+/*#region Recipes Detail*/
+.detail-grid {
+    display: grid;
+    grid-template-columns: 2fr 8fr;
+    grid-template-areas: "image info" 
+                         "main  main";
+}
+.detail-grid * {
+    padding: 0 0 0 8px;
+    margin: 0 0 0 0;
+}
+.detail-grid > img {
+        grid-area: image;
+        height: 250px;
+        width: 300px;
+    }
+.detail-grid > #info {
+    grid-area: info;
+}
+
+.detail-grid > #info > h1 {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.detail-grid > #info > h3 {
+    padding-top: 10px;
+    font-size: 14px;
+}
+
+.detail-grid > #info > p {
+    padding-top: 10px;
+    font-size: 12px;
+}
+
+.detail-grid > #info > h2 {
+    padding-top: 10px;
+    font-size: 14px;
+}
+
+
+
+.detail-grid > #main {
+    grid-area: main;
+}
+
+.Recipe_Detail{
+    font-size: 14px;
+}
+
+.Main_Text > h2 {
+    font-size: 16px;
+    font-weight: bold;
+    padding-top: 10px;
+}
+
+.Main_Text > ul {
+    font-size: 14px;
+    padding-left: 40px;
+}
+
+.Main_Text > ol {
+    font-size: 14px;
+    padding-left: 40px;
+}
+
+
+
+/*#endregion*/
