@@ -6,25 +6,25 @@
 <h2>All Recipes</h2>
 <table>
     <tr>
-        <th></th>
+        <th class="table-label"></th>
         @{
             foreach (Recipe recipe in Model)
             {
-                <th><a asp-controller="Recipes" asp-action="Detail" asp-route-name="@recipe.Id"><img src="~/images/@recipe.ImageName" alt="@recipe.ImageName" /></a></th>
+                <th><a asp-controller="Recipes" asp-action="Detail" asp-route-name="@recipe.Id"><img class="table-food-img" src="~/images/@recipe.ImageName" alt="@recipe.ImageName" /></a></th>
             }
         }
     </tr>
     <tr>
-        <td>Name</td>
+        <td class="table-label">Name</td>
         @{
             foreach (Recipe recipe in Model)
             {
-                <td><p>@recipe.Name</p></td>
+                <td class="green-td"><p>@recipe.Name</p></td>
             }
         }
     </tr>
     <tr>
-        <td>Type</td>
+        <td class="table-label">Type</td>
         @{
             foreach (Recipe recipe in Model)
             {
@@ -33,16 +33,16 @@
         }
     </tr>
     <tr>
-        <td>Cook Time</td>
+        <td class="table-label">Cook Time</td>
         @{
             foreach (Recipe recipe in Model)
             {
-                <td><p>@recipe.CookTimeInMinutes.ToString() min</p></td>
+                <td class="green-td"><p>@recipe.CookTimeInMinutes.ToString() min</p></td>
             }
         }
     </tr>
     <tr>
-        <td>Ingredients</td>
+        <td class="table-label">Ingredients</td>
         @{
             foreach (Recipe recipe in Model)
             {
@@ -51,7 +51,7 @@
         }
     </tr>
     <tr>
-        <td>Rating</td>
+        <td class="table-label">Rating</td>
         @{
             foreach (Recipe recipe in Model)
             {
@@ -66,7 +66,7 @@
                 }
                 string starImage = stars.ToString() + "-star.png";
 
-                <td><img class="Table_Rating" src="~/images/@starImage" alt="@starImage" /></td>
+                <td class="green-td"><img class="Table_Rating" src="~/images/@starImage" alt="@starImage" /></td>
             }
         }
     </tr>

@@ -11,6 +11,10 @@ body {
 .body-content {
     padding-left: 15px;
     padding-right: 15px;
+    margin-top: 0;
+    margin-right: 10%;
+    margin-bottom: 0;
+    margin-left: 10%;
 }
 
 /* Carousel */
@@ -173,10 +177,34 @@ body {
     width: 80px;
     height: 15px;
 }
-
+table {
+    table-layout: fixed;
+    width: 100%;
+}
+th {
+    text-align: center;
+    width: 50%;
+}
 td {
-    padding-top: 40px;
-    padding-left: 20px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    text-align: center;
+}
+td > p {
+    margin-bottom: 0px;
 }
 
+.green-td {
+    background-color: #eff7e0;
+}
+
+.table-food-img {
+    height: 100px;
+}
+
+.table-label {
+    font-weight: bold;
+    text-align: left;
+    width: 100px;
+}
 /*#endregion*/
