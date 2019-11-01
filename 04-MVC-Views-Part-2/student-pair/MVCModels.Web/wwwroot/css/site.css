@@ -60,15 +60,32 @@ body {
     max-width: 281px;
     padding: 0px 10px 0px 10px;
     min-height: 100px;
+    
+}
+
+.Green_Div:not(:first-child) {
+    flex-grow: 1;
+    
+}
+
+.Green_Div > * {
+    margin-top: 10px;
 }
 
 .Green_Box {
-    display: flex;
-    width: 281px;
+    display: grid;
+    width: auto;
+    margin-bottom: 0px;
+    margin-top: auto;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "star ingredients";
 }
 
 .Green_Box p {
+    right: 0px;
+    grid-area: ingredients;
     text-align: right;
+    
 }
 
 .Main_Flex{
@@ -78,6 +95,7 @@ body {
 .Main_Flex > div {
     padding-right: 15px;
 }
+
 /*#endregion*/
 
 /*#region Recipes Detail*/
@@ -147,5 +165,18 @@ body {
 }
 
 
+
+/*#endregion*/
+
+/*#region Recipes table*/
+.Table_Rating{
+    width: 80px;
+    height: 15px;
+}
+
+td {
+    padding-top: 40px;
+    padding-left: 20px;
+}
 
 /*#endregion*/
